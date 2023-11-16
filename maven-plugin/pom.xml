@@ -6,22 +6,34 @@
 	<groupId>com.github.blackrock</groupId>
 	<artifactId>maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>${project.version}</version>
+	<version>1.0.0</version>
 	<name>maven-plugin</name>
 	<url>https://github.com/blackrock/protoc-jar-maven-plugin</url>
 	<description>Protocol Buffers codegen plugin - based on protoc-jar executable JAR</description>
 
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>9</version>
-	</parent>
+<!--	<parent>-->
+<!--		<groupId>org.sonatype.oss</groupId>-->
+<!--		<artifactId>oss-parent</artifactId>-->
+<!--		<version>9</version>-->
+<!--	</parent>-->
 
 	<properties>
+		<codehaus.version>3.0</codehaus.version>
+		<grpc.version>1.25.0</grpc.version>
+		<jupiter.version>5.0.0</jupiter.version>
+		<junit.version>4.13.1</junit.version>
 		<maven.version>3.6.1</maven.version>
+		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
+		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+		<maven-javadoc-plugin.version>3.6.0</maven-javadoc-plugin.version>
+		<maven-plugin-api.version>3.6.1</maven-plugin-api.version>
+		<maven-project.version>2.0.9</maven-project.version>
+		<maven-source-plugin.version>3.3.0</maven-source-plugin.version>
 		<protobuf.version>3.21.7</protobuf.version>
 		<protoc.version>3.21.7</protoc.version>
-		<grpc.version>1.25.0</grpc.version>
+		<protoc-jar.version>1.0.0</protoc-jar.version>
+		<sonatype.version>0.0.7</sonatype.version>
+		<takari-plugin-integration-testing.version>2.9.1</takari-plugin-integration-testing.version>
 	</properties>
 
 	<dependencies>
@@ -29,27 +41,27 @@
 		<dependency>
 			<groupId>com.github.blackrock</groupId>
 			<artifactId>protoc-jar</artifactId>
-			<version>${project.version}</version>
+			<version>${protoc-jar.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-plugin-api</artifactId>
-			<version>${maven.version}</version>
+			<version>${maven-plugin-api.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-project</artifactId>
-			<version>${maven.version}</version>
+			<version>${maven-project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.sonatype.plexus</groupId>
 			<artifactId>plexus-build-api</artifactId>
-			<version>0.0.7</version>
+			<version>${sonatype.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.plexus</groupId>
 			<artifactId>plexus-utils</artifactId>
-			<version>3.0</version>
+			<version>${codehaus.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -61,22 +73,23 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- JUnit 5 -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>io.takari.maven.plugins</groupId>
-			<artifactId>takari-plugin-integration-testing</artifactId>
-			<version>2.9.1</version>
-			<type>pom</type>
-			<scope>test</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.junit.jupiter</groupId>-->
+<!--			<artifactId>junit-jupiter</artifactId>-->
+<!--			<version>${jupiter.version}</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.takari.maven.plugins</groupId>-->
+<!--			<artifactId>takari-plugin-integration-testing</artifactId>-->
+<!--			<version>${takari-plugin-integration-testing.version}</version>-->
+<!--			<type>pom</type>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 
 	</dependencies>
 
@@ -99,7 +112,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.version}</version>
+				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
 					<source>1.5</source>
 					<target>1.5</target>
@@ -108,7 +121,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>${maven.version}</version>
+				<version>${maven-assembly-plugin.version}</version>
 				<configuration>
 					<appendAssemblyId>false</appendAssemblyId>
 					<archive>
@@ -136,7 +149,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven.version}</version>
+				<version>${maven-source-plugin.version}</version>
 				<executions>
 					<execution>
 					<id>attach-sources</id>
@@ -149,7 +162,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven.version}</version>
+				<version>${maven-javadoc-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>attach-javadoc</id>
