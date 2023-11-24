@@ -15,12 +15,12 @@
  */
 package com.github.os72.protocjar;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ProtocTest
 {
@@ -48,7 +48,7 @@ public class ProtocTest
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 		{
-			String[] args = {"--version", "-v3.5.0-SNAPSHOT"}; // not embedded, should trigger download
+			String[] args = {"--version", "-v3.25.1"}; // not embedded, should trigger download
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 	}
@@ -67,7 +67,7 @@ public class ProtocTest
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 		{
-			String[] args = {"--version", "-v:com.github.os72:protoc:3.4.0-SNAPSHOT"};
+			String[] args = {"--version", "-v:com.github.os72:protoc:3.7.0"};
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 	}

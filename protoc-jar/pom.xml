@@ -10,50 +10,43 @@
 	<url>https://github.com/blackrock/protoc-jar-maven-plugin/protoc-jar</url>
 	<description>Protocol Buffers compiler - executable JAR and API</description>
 
-<!--	<parent>-->
-<!--		<groupId>org.sonatype.oss</groukpId>-->
-<!--		<artifactId>oss-parent</artifactId>-->
-<!--		<version>9</version>-->
-<!--	</parent>-->
-
 	<properties>
-		<jupiter.version>5.0.0</jupiter.version>
-		<junit.version>4.13.1</junit.version>
-		<maven.version>3.6.1</maven.version>
-		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
+		<maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
 		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-		<maven-javadoc-plugin.version>3.6.0</maven-javadoc-plugin.version>
+		<maven-javadoc-plugin.version>3.6.2</maven-javadoc-plugin.version>
 		<maven-source-plugin.version>3.3.0</maven-source-plugin.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>5.10.1</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<!-- test -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- JUnit 5 -->
-<!--		<dependency>-->
-<!--			<groupId>org.junit.jupiter</groupId>-->
-<!--			<artifactId>junit-jupiter</artifactId>-->
-<!--			<version>${jupiter.version}</version>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
 	</dependencies>
 
 	<build>
-
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -110,9 +103,7 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
-
 	</build>
 
 </project>
