@@ -4,7 +4,7 @@ protoc-jar
 Protocol Buffers protobuf compiler - multi-platform executable protoc JAR and API.
 Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/os72/protoc-jar/3.11.4/
 
-[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.os72|protoc-jar|3.11.4|)
+[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.blackrock|protoc-jar|3.11.4|)
 [![Join the chat at https://gitter.im/os72/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/os72/community)
 
 ---
@@ -115,7 +115,7 @@ Detected platform: windows-x86_64 (windows 8.1/amd64)
 
 #### Usage - API
 ```java
-import com.github.os72.protocjar.Protoc;
+import com.github.blackrock.protocjar.Protoc;
 ...
 String[] args = {"-v2.4.1", "--help"};
 Protoc.runProtoc(args);
@@ -125,7 +125,7 @@ Protoc.runProtoc(args);
 
 ```xml
 <dependency>
-  <groupId>com.github.os72</groupId>
+  <groupId>com.github.blackrock</groupId>
   <artifactId>protoc-jar</artifactId>
   <version>3.11.4</version>
 </dependency>

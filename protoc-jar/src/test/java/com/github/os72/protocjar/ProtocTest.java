@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.os72.protocjar;
+package com.github.blackrock.protocjar;
 
 import org.junit.jupiter.api.Test;
 
@@ -63,11 +63,11 @@ public class ProtocTest
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 		{
-			String[] args = {"--version", "-v:com.github.os72:protoc:3.4.0"};
+			String[] args = {"--version", "-v:com.github.blackrock:protoc:3.4.0"};
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 		{
-			String[] args = {"--version", "-v:com.github.os72:protoc:3.7.0"};
+			String[] args = {"--version", "-v:com.github.blackrock:protoc:3.7.0"};
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 	}

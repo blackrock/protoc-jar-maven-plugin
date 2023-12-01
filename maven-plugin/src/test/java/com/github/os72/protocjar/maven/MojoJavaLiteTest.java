@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.os72.protocjar.maven;
+package com.github.blackrock.protocjar.maven;
 
 import java.io.File;
 
@@ -21,7 +21,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.github.os72.protocjar.ProtocVersion;
+import com.github.blackrock.protocjar.ProtocVersion;
 
 import io.takari.maven.testing.TestResources;
 import io.takari.maven.testing.executor.MavenRuntime;

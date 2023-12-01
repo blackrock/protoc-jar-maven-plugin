@@ -4,7 +4,7 @@ protoc-jar-maven-plugin
 Protocol Buffers protobuf maven plugin - performs protobuf code generation using [protoc-jar](https://github.com/os72/protoc-jar) multi-platform executable protoc JAR.
 Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/os72/protoc-jar-maven-plugin/3.11.4/
 
-[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.os72|protoc-jar-maven-plugin|3.11.4|)
+[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.blackrock|protoc-jar-maven-plugin|3.11.4|)
 [![Join the chat at https://gitter.im/os72/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/os72/community)
 
 ---
@@ -42,7 +42,7 @@ Documentation: see http://os72.github.io/protoc-jar-maven-plugin/, in particular
 Sample usage - compile in main cycle into `target/generated-sources`, add generated sources to project, use default `protoc` version and default `src/main/protobuf` source folder:
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -59,7 +59,7 @@ Sample usage - compile in main cycle into `target/generated-sources`, add genera
 Sample usage - compile in main cycle into `target/generated-sources`, add generated sources to project, add all .proto sources to generated jar, include .proto files from direct maven dependencies, include additional imports:
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -86,7 +86,7 @@ Sample usage - compile in main cycle into `target/generated-sources`, add genera
 Sample usage - download protoc and plugin binaries from maven repo, multiple output targets (example: gRPC):
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -118,7 +118,7 @@ Sample usage - download protoc and plugin binaries from maven repo, multiple out
 Sample usage - javalite, multiple output targets:
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -150,7 +150,7 @@ Sample usage - javalite, multiple output targets:
 Sample usage - compile in test cycle, multiple output targets, don't alter project (`<addSources>: none`):
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -185,7 +185,7 @@ Sample usage - compile in test cycle, multiple output targets, don't alter proje
 Sample usage - generate java shaded for use with `protobuf-java-shaded-241`, don't alter project:
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
