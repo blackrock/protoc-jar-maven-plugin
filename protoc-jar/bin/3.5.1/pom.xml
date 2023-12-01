@@ -7,7 +7,7 @@
   <packaging>pom</packaging>
   <version>3.5.1-build2</version>
   <name>protoc</name>
-  <url>https://github.com/os72/protoc-jar</url>
+  <url>https://github.com/blackrock/protoc-jar</url>
   <description>Protocol Buffers compiler - executable</description>
 
   <parent>

@@ -18,8 +18,6 @@ package com.github.blackrock.protocjar;
 import java.io.InputStream;
 import java.net.URLConnection;
 
-import org.junit.jupiter.api.Test;
-
 public class URLSpecTest
 {
 	// enable this if a test proxy is available (eg, squid)

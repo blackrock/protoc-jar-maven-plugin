@@ -5,7 +5,7 @@
 
 protoc-jar-maven-plugin
 
-  Protocol Buffers codegen plugin - based on {{{https://github.com/os72/protoc-jar}protoc-jar}} executable JAR
+  Protocol Buffers codegen plugin - based on {{{https://github.com/blackrock/protoc-jar}protoc-jar}} executable JAR
 
 * Goals Overview
 

@@ -20,13 +20,13 @@ Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, and any protoc ve
   * Older versions (2.4.1, 2.6.1, 3.4.0), thanks [garciagorka](https://github.com/garciagorka)
 
 See also
-* https://github.com/os72/protoc-jar-maven-plugin
-* https://github.com/os72/protobuf-java-shaded-241
-* https://github.com/os72/protobuf-java-shaded-250
-* https://github.com/os72/protobuf-java-shaded-261
-* https://github.com/os72/protobuf-java-shaded-351
-* https://github.com/os72/protobuf-java-shaded-360
-* https://github.com/os72/protobuf-java-shaded-3-11-1
+* https://github.com/blackrock/protoc-jar-maven-plugin
+* https://github.com/blackrock/protobuf-java-shaded-241
+* https://github.com/blackrock/protobuf-java-shaded-250
+* https://github.com/blackrock/protobuf-java-shaded-261
+* https://github.com/blackrock/protobuf-java-shaded-351
+* https://github.com/blackrock/protobuf-java-shaded-360
+* https://github.com/blackrock/protobuf-java-shaded-3-11-1
 * https://github.com/google/protobuf
 
 Binaries
@@ -114,11 +114,12 @@ Detected platform: windows-x86_64 (windows 8.1/amd64)
 ```
 
 #### Usage - API
+
 ```java
-import com.github.blackrock.protocjar.Protoc;
+
 ...
-String[] args = {"-v2.4.1", "--help"};
-Protoc.runProtoc(args);
+        String[]args={"-v2.4.1","--help"};
+        Protoc.runProtoc(args);
 ```
 
 #### Maven dependency
