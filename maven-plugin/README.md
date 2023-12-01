@@ -2,10 +2,9 @@ protoc-jar-maven-plugin
 =======================
 
 Protocol Buffers protobuf maven plugin - performs protobuf code generation using [protoc-jar](https://github.com/blackrock/protoc-jar) multi-platform executable protoc JAR.
-Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/os72/protoc-jar-maven-plugin/3.11.4/
+Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/blackrock/protoc-jar-maven-plugin/3.11.4/
 
 [![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.blackrock|protoc-jar-maven-plugin|3.11.4|)
-[![Join the chat at https://gitter.im/os72/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/os72/community)
 
 ---
 
@@ -32,12 +31,12 @@ See also
 
 Binaries
 * https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/
-* https://repo.maven.apache.org/maven2/com/github/os72/protoc/
-* https://oss.sonatype.org/content/repositories/snapshots/com/github/os72/protoc/
+* https://repo.maven.apache.org/maven2/com/github/blackrock/protoc/
+* https://oss.sonatype.org/content/repositories/snapshots/com/github/blackrock/protoc/
 
 #### Usage
 
-Documentation: see http://os72.github.io/protoc-jar-maven-plugin/, in particular [run-mojo](http://os72.github.io/protoc-jar-maven-plugin/run-mojo.html)
+Documentation: see http://blackrock.github.io/protoc-jar-maven-plugin/, in particular [run-mojo](http://blackrock.github.io/protoc-jar-maven-plugin/run-mojo.html)
 
 Sample usage - compile in main cycle into `target/generated-sources`, add generated sources to project, use default `protoc` version and default `src/main/protobuf` source folder:
 ```xml

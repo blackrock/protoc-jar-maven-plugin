@@ -48,9 +48,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git@github.com:os72/protoc-jar.git</connection>
-    <developerConnection>scm:git:git@github.com:os72/protoc-jar.git</developerConnection>
-    <url>git@github.com:os72/protoc-jar.git</url>
+    <connection>scm:git:git@github.com:blackrock/protoc-jar.git</connection>
+    <developerConnection>scm:git:git@github.com:blackrock/protoc-jar.git</developerConnection>
+    <url>git@github.com:blackrock/protoc-jar.git</url>
   </scm>
 
   <dependencies>

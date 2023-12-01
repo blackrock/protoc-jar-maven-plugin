@@ -460,7 +460,7 @@ public class Protoc
 
 	static String[] sDdownloadPaths = {
 		"com/google/protobuf/protoc/",
-		"com/github/os72/protoc/",
+		"com/github/blackrock/protoc/",
 	};
 
 	static String[] sStdTypesProto2 = {

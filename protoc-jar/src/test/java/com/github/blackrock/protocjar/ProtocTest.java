@@ -143,7 +143,7 @@ public class ProtocTest
 	}
 
 	private static void assertHasGeneratedFile(String outDir) {
-		assertTrue(new File(outDir + "/com/github/os72/protocjar/PersonSchema.java").exists());
+		assertTrue(new File(outDir + "/com/github/blackrock/protocjar/PersonSchema.java").exists());
 	}
 
 	static void log(Object msg) {
