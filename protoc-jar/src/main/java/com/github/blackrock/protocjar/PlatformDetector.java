@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 // code from kr.motd.maven:os-maven-plugin:1.5.0.Final, repackaged to avoid interference in protoc-jar-maven-plugin
-package com.github.os72.protocjar;
+package com.github.blackrock.protocjar;
 
 import java.io.BufferedReader;
 import java.io.Closeable;

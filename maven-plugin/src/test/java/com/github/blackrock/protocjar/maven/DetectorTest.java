@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.os72.protocjar.maven;
+package com.github.blackrock.protocjar.maven;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,7 +22,7 @@ import java.util.Properties;
 
 import org.junit.Test;
 
-import com.github.os72.protocjar.PlatformDetector;
+import com.github.blackrock.protocjar.PlatformDetector;
 
 public class DetectorTest extends PlatformDetector
 {

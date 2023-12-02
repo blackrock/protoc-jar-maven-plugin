@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.os72.protocjar;
+package com.github.blackrock.protocjar;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -155,7 +155,7 @@ public class Protoc
 					br = new BufferedReader(new FileReader(file));
 					String line;
 					while ((line = br.readLine()) != null) {
-						pw.println(line.replace("com.google.protobuf", "com.github.os72.protobuf" + shadingVersion));
+						pw.println(line.replace("com.google.protobuf", "com.github.blackrock.protobuf" + shadingVersion));
 					}
 					pw.close();
 					br.close();
@@ -460,7 +460,7 @@ public class Protoc
 
 	static String[] sDdownloadPaths = {
 		"com/google/protobuf/protoc/",
-		"com/github/os72/protoc/",
+		"com/github/blackrock/protoc/",
 	};
 
 	static String[] sStdTypesProto2 = {

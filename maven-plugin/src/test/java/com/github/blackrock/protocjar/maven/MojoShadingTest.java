@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.os72.protocjar.maven;
+package com.github.blackrock.protocjar.maven;
 
 import java.io.File;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import com.github.os72.protocjar.ProtocVersion;
 
 import io.takari.maven.testing.TestResources;
 import io.takari.maven.testing.executor.MavenRuntime;
@@ -31,21 +29,30 @@ import io.takari.maven.testing.executor.junit.MavenJUnitTestRunner;
 
 @RunWith(MavenJUnitTestRunner.class)
 @MavenVersions({"3.2.3"})
-public class MojoImportTest
+public class MojoShadingTest
 {
 	@Rule
 	public final TestResources resources = new TestResources();
 	public final MavenRuntime maven;
 	
-	public MojoImportTest(MavenRuntimeBuilder mavenBuilder) throws Exception {
+	public MojoShadingTest(MavenRuntimeBuilder mavenBuilder) throws Exception {
 		this.maven = mavenBuilder.withCliOptions("-B", "-U", "-e").build();
 	}
 
 	@Test
-	public void testImport() throws Exception {
-		File basedir = resources.getBasedir("import-test");
+	public void testShading360() throws Exception {
+		File basedir = resources.getBasedir("shading-test");
 		maven.forProject(basedir)
-			.withCliOption("-Dprotobuf.version=" + ProtocVersion.PROTOC_VERSION)
+			.withCliOption("-Dprotobuf.version=360")
+			.execute("verify")
+			.assertErrorFreeLog();
+	}
+
+	@Test
+	public void testShading241() throws Exception {
+		File basedir = resources.getBasedir("shading-test");
+		maven.forProject(basedir)
+			.withCliOption("-Dprotobuf.version=241")
 			.execute("verify")
 			.assertErrorFreeLog();
 	}

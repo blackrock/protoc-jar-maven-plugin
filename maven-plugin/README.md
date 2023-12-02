@@ -1,15 +1,14 @@
 protoc-jar-maven-plugin
 =======================
 
-Protocol Buffers protobuf maven plugin - performs protobuf code generation using [protoc-jar](https://github.com/os72/protoc-jar) multi-platform executable protoc JAR.
-Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/os72/protoc-jar-maven-plugin/3.11.4/
+Protocol Buffers protobuf maven plugin - performs protobuf code generation using [protoc-jar](https://github.com/blackrock/protoc-jar) multi-platform executable protoc JAR.
+Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/blackrock/protoc-jar-maven-plugin/3.11.4/
 
-[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.os72|protoc-jar-maven-plugin|3.11.4|)
-[![Join the chat at https://gitter.im/os72/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/os72/community)
+[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.blackrock|protoc-jar-maven-plugin|3.11.4|)
 
 ---
 
-Simple maven plugin to compile .proto files using [protoc-jar](https://github.com/os72/protoc-jar) embedded protoc compiler, providing some portability across the major platforms (Linux, Mac/OSX, and Windows). At build time the plugin detects the platform and executes the corresponding protoc binary.
+Simple maven plugin to compile .proto files using [protoc-jar](https://github.com/blackrock/protoc-jar) embedded protoc compiler, providing some portability across the major platforms (Linux, Mac/OSX, and Windows). At build time the plugin detects the platform and executes the corresponding protoc binary.
 
 Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, and any binaries (protoc and protoc plugins) available for download from maven central. Also supports pre-installed protoc binary
 
@@ -21,28 +20,28 @@ Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, and any binaries 
   * Older versions (2.4.1, 2.6.1, 3.4.0), thanks [garciagorka](https://github.com/garciagorka)
 
 See also
-* https://github.com/os72/protoc-jar
-* https://github.com/os72/protobuf-java-shaded-241
-* https://github.com/os72/protobuf-java-shaded-250
-* https://github.com/os72/protobuf-java-shaded-261
-* https://github.com/os72/protobuf-java-shaded-351
-* https://github.com/os72/protobuf-java-shaded-360
-* https://github.com/os72/protobuf-java-shaded-3-11-1
+* https://github.com/blackrock/protoc-jar
+* https://github.com/blackrock/protobuf-java-shaded-241
+* https://github.com/blackrock/protobuf-java-shaded-250
+* https://github.com/blackrock/protobuf-java-shaded-261
+* https://github.com/blackrock/protobuf-java-shaded-351
+* https://github.com/blackrock/protobuf-java-shaded-360
+* https://github.com/blackrock/protobuf-java-shaded-3-11-1
 * https://github.com/google/protobuf
 
 Binaries
 * https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/
-* https://repo.maven.apache.org/maven2/com/github/os72/protoc/
-* https://oss.sonatype.org/content/repositories/snapshots/com/github/os72/protoc/
+* https://repo.maven.apache.org/maven2/com/github/blackrock/protoc/
+* https://oss.sonatype.org/content/repositories/snapshots/com/github/blackrock/protoc/
 
 #### Usage
 
-Documentation: see http://os72.github.io/protoc-jar-maven-plugin/, in particular [run-mojo](http://os72.github.io/protoc-jar-maven-plugin/run-mojo.html)
+Documentation: see http://blackrock.github.io/protoc-jar-maven-plugin/, in particular [run-mojo](http://blackrock.github.io/protoc-jar-maven-plugin/run-mojo.html)
 
 Sample usage - compile in main cycle into `target/generated-sources`, add generated sources to project, use default `protoc` version and default `src/main/protobuf` source folder:
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -59,7 +58,7 @@ Sample usage - compile in main cycle into `target/generated-sources`, add genera
 Sample usage - compile in main cycle into `target/generated-sources`, add generated sources to project, add all .proto sources to generated jar, include .proto files from direct maven dependencies, include additional imports:
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -86,7 +85,7 @@ Sample usage - compile in main cycle into `target/generated-sources`, add genera
 Sample usage - download protoc and plugin binaries from maven repo, multiple output targets (example: gRPC):
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -118,7 +117,7 @@ Sample usage - download protoc and plugin binaries from maven repo, multiple out
 Sample usage - javalite, multiple output targets:
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -150,7 +149,7 @@ Sample usage - javalite, multiple output targets:
 Sample usage - compile in test cycle, multiple output targets, don't alter project (`<addSources>: none`):
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>
@@ -185,7 +184,7 @@ Sample usage - compile in test cycle, multiple output targets, don't alter proje
 Sample usage - generate java shaded for use with `protobuf-java-shaded-241`, don't alter project:
 ```xml
 <plugin>
-	<groupId>com.github.os72</groupId>
+	<groupId>com.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
 	<version>3.11.4</version>
 	<executions>

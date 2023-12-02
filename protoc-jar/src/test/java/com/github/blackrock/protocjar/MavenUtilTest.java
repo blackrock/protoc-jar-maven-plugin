@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.os72.protocjar;
+package com.github.blackrock.protocjar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -23,7 +23,7 @@ import java.util.Properties;
 
 import org.junit.jupiter.api.Test;
 
-import com.github.os72.protocjar.MavenUtil.MavenSettings;
+import com.github.blackrock.protocjar.MavenUtil.MavenSettings;
 
 public class MavenUtilTest
 {
