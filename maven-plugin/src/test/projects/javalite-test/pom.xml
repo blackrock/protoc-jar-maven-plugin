@@ -34,7 +34,7 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.github.os72</groupId>
+				<groupId>com.github.blackrock</groupId>
 				<artifactId>protoc-jar-maven-plugin</artifactId>
 				<version>${it-plugin.version}</version>
 				<executions>

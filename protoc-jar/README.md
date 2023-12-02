@@ -2,10 +2,9 @@ protoc-jar
 ==========
 
 Protocol Buffers protobuf compiler - multi-platform executable protoc JAR and API.
-Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/os72/protoc-jar/3.11.4/
+Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/blackrock/protoc-jar/3.11.4/
 
-[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.os72|protoc-jar|3.11.4|)
-[![Join the chat at https://gitter.im/os72/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/os72/community)
+[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.blackrock|protoc-jar|3.11.4|)
 
 ---
 
@@ -20,19 +19,19 @@ Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, and any protoc ve
   * Older versions (2.4.1, 2.6.1, 3.4.0), thanks [garciagorka](https://github.com/garciagorka)
 
 See also
-* https://github.com/os72/protoc-jar-maven-plugin
-* https://github.com/os72/protobuf-java-shaded-241
-* https://github.com/os72/protobuf-java-shaded-250
-* https://github.com/os72/protobuf-java-shaded-261
-* https://github.com/os72/protobuf-java-shaded-351
-* https://github.com/os72/protobuf-java-shaded-360
-* https://github.com/os72/protobuf-java-shaded-3-11-1
+* https://github.com/blackrock/protoc-jar-maven-plugin
+* https://github.com/blackrock/protobuf-java-shaded-241
+* https://github.com/blackrock/protobuf-java-shaded-250
+* https://github.com/blackrock/protobuf-java-shaded-261
+* https://github.com/blackrock/protobuf-java-shaded-351
+* https://github.com/blackrock/protobuf-java-shaded-360
+* https://github.com/blackrock/protobuf-java-shaded-3-11-1
 * https://github.com/google/protobuf
 
 Binaries
 * https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/
-* https://repo.maven.apache.org/maven2/com/github/os72/protoc/
-* https://oss.sonatype.org/content/repositories/snapshots/com/github/os72/protoc/
+* https://repo.maven.apache.org/maven2/com/github/blackrock/protoc/
+* https://oss.sonatype.org/content/repositories/snapshots/com/github/blackrock/protoc/
 
 Version support
 * protobuf 2.4.1: `-v2.4.1`
@@ -72,8 +71,8 @@ $ java -jar protoc-jar-3.11.4.jar -v3.1.0 --version
 protoc-jar: protoc version: 3.1.0, detected platform: windows-x86_64 (windows 8.1/amd64)
 protoc-jar: downloading: http://central.maven.org/maven2/com/google/protobuf/protoc/maven-metadata.xml
 protoc-jar: saved: C:\cygwin64\tmp\protocjar.webcache\com\google\protobuf\protoc\maven-metadata.xml
-protoc-jar: downloading: http://central.maven.org/maven2/com/github/os72/protoc/maven-metadata.xml
-protoc-jar: saved: C:\cygwin64\tmp\protocjar.webcache\com\github\os72\protoc\maven-metadata.xml
+protoc-jar: downloading: http://central.maven.org/maven2/com/github/blackrock/protoc/maven-metadata.xml
+protoc-jar: saved: C:\cygwin64\tmp\protocjar.webcache\com\github\blackrock\protoc\maven-metadata.xml
 protoc-jar: cached: C:\cygwin64\tmp\protocjar.webcache\com\google\protobuf\protoc\maven-metadata.xml
 protoc-jar: downloading: http://central.maven.org/maven2/com/google/protobuf/protoc/3.1.0-build2/protoc-3.1.0-build2-windows-x86_64.exe
 protoc-jar: saved: C:\cygwin64\tmp\protocjar.webcache\com\google\protobuf\protoc\3.1.0-build2\protoc-3.1.0-build2-windows-x86_64.exe
@@ -114,18 +113,19 @@ Detected platform: windows-x86_64 (windows 8.1/amd64)
 ```
 
 #### Usage - API
+
 ```java
-import com.github.os72.protocjar.Protoc;
+
 ...
-String[] args = {"-v2.4.1", "--help"};
-Protoc.runProtoc(args);
+        String[]args={"-v2.4.1","--help"};
+        Protoc.runProtoc(args);
 ```
 
 #### Maven dependency
 
 ```xml
 <dependency>
-  <groupId>com.github.os72</groupId>
+  <groupId>com.github.blackrock</groupId>
   <artifactId>protoc-jar</artifactId>
   <version>3.11.4</version>
 </dependency>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>com.github.os72</groupId>
+  <groupId>com.github.blackrock</groupId>
   <artifactId>protoc</artifactId>
   <versioning>
     <latest>3.7.0</latest>

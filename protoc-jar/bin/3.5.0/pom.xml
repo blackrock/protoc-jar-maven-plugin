@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.os72</groupId>
+  <groupId>com.github.blackrock</groupId>
   <artifactId>protoc</artifactId>
   <packaging>pom</packaging>
   <version>3.5.0-build2</version>
   <name>protoc</name>
-  <url>https://github.com/os72/protoc-jar</url>
+  <url>https://github.com/blackrock/protoc-jar</url>
   <description>Protocol Buffers compiler - executable</description>
 
   <parent>
@@ -44,9 +44,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git@github.com:os72/protoc-jar.git</connection>
-    <developerConnection>scm:git:git@github.com:os72/protoc-jar.git</developerConnection>
-    <url>git@github.com:os72/protoc-jar.git</url>
+    <connection>scm:git:git@github.com:blackrock/protoc-jar.git</connection>
+    <developerConnection>scm:git:git@github.com:blackrock/protoc-jar.git</developerConnection>
+    <url>git@github.com:blackrock/protoc-jar.git</url>
   </scm>
 
   <dependencies>
