@@ -41,7 +41,7 @@
 
         <plugin>
             <groupId>com.github.blackrock</groupId>
-            <artifactId>protoc-jar-maven-plugin</artifactId>
+            <artifactId>protoc-maven-plugin</artifactId>
             <version>${it-plugin.version}</version>
             <executions>
                 <execution>

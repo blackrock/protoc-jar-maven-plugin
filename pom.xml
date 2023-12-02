@@ -6,10 +6,10 @@
     <groupId>com.github.blackrock</groupId>
     <artifactId>protoc-jar-maven-plugin</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>protoc-jar</module>
-        <module>maven-plugin</module>
+        <module>protoc-maven-plugin</module>
     </modules>
     <name>protoc-jar-maven-plugin</name>
     <url>https://github.com/blackrock/protoc-jar-maven-plugin</url>

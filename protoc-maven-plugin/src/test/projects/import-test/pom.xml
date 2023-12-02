@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.blackrock</groupId>
-	<artifactId>grpc-test</artifactId>
+	<artifactId>import-test</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
 	<licenses>
@@ -22,23 +22,12 @@
 		</developer>
 	</developers>
 
-
 	<dependencies>
 		<!-- compile -->
 		<dependency>
 			<groupId>com.google.protobuf</groupId>
 			<artifactId>protobuf-java</artifactId>
 			<version>${protobuf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.grpc</groupId>
-			<artifactId>grpc-protobuf</artifactId>
-			<version>${grpc.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.grpc</groupId>
-			<artifactId>grpc-stub</artifactId>
-			<version>${grpc.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -48,7 +37,7 @@
 
 			<plugin>
 				<groupId>com.github.blackrock</groupId>
-				<artifactId>protoc-jar-maven-plugin</artifactId>
+				<artifactId>protoc-maven-plugin</artifactId>
 				<version>${it-plugin.version}</version>
 				<executions>
 					<execution>
@@ -58,18 +47,23 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
-							<protocArtifact>com.google.protobuf:protoc:${protobuf.version}</protocArtifact>
 							<addProtoSources>all</addProtoSources>
+							<includeMavenTypes>direct</includeMavenTypes>
+							<includeDirectories>
+								<include>testprotos</include>
+							</includeDirectories>
 							<inputDirectories>
 								<include>testprotos</include>
 							</inputDirectories>
 							<outputTargets>
 								<outputTarget>
 									<type>java</type>
+									<addSources>main</addSources>
 								</outputTarget>
 								<outputTarget>
-									<type>grpc-java</type>
-									<pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}</pluginArtifact>
+									<type>descriptor</type>
+									<addSources>none</addSources>
+									<outputDirectory>${project.build.directory}/classes</outputDirectory>
 								</outputTarget>
 							</outputTargets>
 						</configuration>
