@@ -63,11 +63,11 @@ public class ProtocTest
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 		{
-			String[] args = {"--version", "-v:com.github.blackrock:protoc:3.4.0"};
+			String[] args = {"--version", "-v:com.google.protobuf:protoc:3.4.0"};
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 		{
-			String[] args = {"--version", "-v:com.github.blackrock:protoc:3.7.0"};
+			String[] args = {"--version", "-v:com.google.protobuf:protoc:3.7.0"};
 			assertEquals(0, Protoc.runProtoc(args));
 		}
 	}
