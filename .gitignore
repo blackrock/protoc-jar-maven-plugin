@@ -1,5 +1,8 @@
 .DS_store
 */.DS_store
+.idea/
+target/
+*.versionsBackup
 
 # Local .terraform directories
 **/.terraform/*
