@@ -2,7 +2,7 @@
 */.DS_store
 .idea/
 *.iml
-Target/
+target/
 *.versionsBackup
 
 # Local .terraform directories

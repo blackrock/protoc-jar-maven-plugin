@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.blackrock</groupId>
-	<artifactId>import-test</artifactId>
+	<artifactId>shading-test</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
 	<licenses>
@@ -25,9 +25,9 @@
 	<dependencies>
 		<!-- compile -->
 		<dependency>
-			<groupId>com.google.protobuf</groupId>
-			<artifactId>protobuf-java</artifactId>
-			<version>${protobuf.version}</version>
+			<groupId>com.github.blackrock</groupId>
+			<artifactId>protobuf-java-shaded-${protobuf.version}</artifactId>
+			<version>0.9</version>
 		</dependency>
 	</dependencies>
 
@@ -37,7 +37,7 @@
 
 			<plugin>
 				<groupId>com.github.blackrock</groupId>
-				<artifactId>protoc-jar-maven-plugin</artifactId>
+				<artifactId>protoc-maven-plugin</artifactId>
 				<version>${it-plugin.version}</version>
 				<executions>
 					<execution>
@@ -47,23 +47,14 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
+							<protocVersion>${protobuf.version}</protocVersion>
 							<addProtoSources>all</addProtoSources>
-							<includeMavenTypes>direct</includeMavenTypes>
-							<includeDirectories>
-								<include>testprotos</include>
-							</includeDirectories>
 							<inputDirectories>
 								<include>testprotos</include>
 							</inputDirectories>
 							<outputTargets>
 								<outputTarget>
-									<type>java</type>
-									<addSources>main</addSources>
-								</outputTarget>
-								<outputTarget>
-									<type>descriptor</type>
-									<addSources>none</addSources>
-									<outputDirectory>${project.build.directory}/classes</outputDirectory>
+								<type>java-shaded</type>
 								</outputTarget>
 							</outputTargets>
 						</configuration>

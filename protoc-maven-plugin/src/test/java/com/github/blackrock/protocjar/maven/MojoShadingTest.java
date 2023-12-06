@@ -18,17 +18,13 @@ package com.github.blackrock.protocjar.maven;
 import java.io.File;
 
 import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import io.takari.maven.testing.TestResources;
 import io.takari.maven.testing.executor.MavenRuntime;
 import io.takari.maven.testing.executor.MavenRuntime.MavenRuntimeBuilder;
-import io.takari.maven.testing.executor.MavenVersions;
-import io.takari.maven.testing.executor.junit.MavenJUnitTestRunner;
 
-@RunWith(MavenJUnitTestRunner.class)
-@MavenVersions({"3.2.3"})
+//@RunWith(MavenJUnitTestRunner.class)
+//@MavenVersions({"3.2.3"})
 public class MojoShadingTest
 {
 	@Rule
@@ -39,7 +35,8 @@ public class MojoShadingTest
 		this.maven = mavenBuilder.withCliOptions("-B", "-U", "-e").build();
 	}
 
-	@Test
+	// Disabled - plan is to not support shaded output
+	// @Test
 	public void testShading360() throws Exception {
 		File basedir = resources.getBasedir("shading-test");
 		maven.forProject(basedir)
@@ -48,7 +45,8 @@ public class MojoShadingTest
 			.assertErrorFreeLog();
 	}
 
-	@Test
+	// Disabled - plan is to not support shaded output
+	// @Test
 	public void testShading241() throws Exception {
 		File basedir = resources.getBasedir("shading-test");
 		maven.forProject(basedir)

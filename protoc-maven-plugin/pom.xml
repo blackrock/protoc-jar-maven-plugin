@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.blackrock</groupId>
-	<artifactId>maven-plugin</artifactId>
+	<artifactId>protoc-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>1.0.0</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>maven-plugin</name>
 	<url>https://github.com/blackrock/protoc-jar-maven-plugin</url>
 	<description>Protocol Buffers codegen plugin - based on protoc-jar executable JAR</description>
@@ -23,15 +23,22 @@
 		<jupiter.version>5.0.0</jupiter.version>
 		<junit.version>4.13.1</junit.version>
 		<maven.version>3.6.1</maven.version>
-		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
+		<maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
 		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-		<maven-javadoc-plugin.version>3.6.0</maven-javadoc-plugin.version>
-		<maven-plugin-api.version>3.6.1</maven-plugin-api.version>
+
+		<!-- keep javadoc plugin 2.9.x and plugin-plugin in 3.2 - using latest results in error due to the ProtocJarMojo still using javadoc @goal @parameter
+		     once migrated ProtoJarMojo to use Java annotations using maven-plugin-annotations (https://mvnrepository.com/artifact/org.apache.maven.plugin-tools/maven-plugin-annotations)
+		     then we can upgrade to latest 3.x.x -->
+		<maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+		<maven-plugin-plugin.version>3.2</maven-plugin-plugin.version>
+
+		<maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
+		<maven-plugin-api.version>2.0.9</maven-plugin-api.version>
 		<maven-project.version>2.0.9</maven-project.version>
 		<maven-source-plugin.version>3.3.0</maven-source-plugin.version>
 		<protobuf.version>3.21.7</protobuf.version>
 		<protoc.version>3.21.7</protoc.version>
-		<protoc-jar.version>1.0.0</protoc-jar.version>
+		<protoc-jar.version>1.0-SNAPSHOT</protoc-jar.version>
 		<sonatype.version>0.0.7</sonatype.version>
 		<takari-plugin-integration-testing.version>2.9.1</takari-plugin-integration-testing.version>
 	</properties>
@@ -83,13 +90,13 @@
 <!--			<version>${jupiter.version}</version>-->
 <!--			<scope>test</scope>-->
 <!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>io.takari.maven.plugins</groupId>-->
-<!--			<artifactId>takari-plugin-integration-testing</artifactId>-->
-<!--			<version>${takari-plugin-integration-testing.version}</version>-->
-<!--			<type>pom</type>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>io.takari.maven.plugins</groupId>
+			<artifactId>takari-plugin-integration-testing</artifactId>
+			<version>${takari-plugin-integration-testing.version}</version>
+			<type>pom</type>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 
@@ -114,9 +121,19 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<version>${maven-plugin-plugin.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
