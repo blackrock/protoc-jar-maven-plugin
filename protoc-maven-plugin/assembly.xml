@@ -16,7 +16,7 @@
       <scope>runtime</scope>
       <includes>
         <include>com.github.blackrock:protoc-jar</include>
-        <include>com.github.blackrock:maven-plugin</include>
+        <include>com.github.blackrock:protoc-maven-plugin</include>
       </includes>
     </dependencySet>
   </dependencySets>
