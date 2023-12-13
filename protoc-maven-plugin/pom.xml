@@ -30,8 +30,6 @@
 		<maven-plugin-api.version>2.0.9</maven-plugin-api.version>
 		<maven-project.version>2.0.9</maven-project.version>
 		<maven-source-plugin.version>3.3.0</maven-source-plugin.version>
-		<protobuf.version>3.21.7</protobuf.version>
-		<protoc.version>3.21.7</protoc.version>
 		<protoc-jar.version>1.0-SNAPSHOT</protoc-jar.version>
 		<sonatype.version>0.0.7</sonatype.version>
 		<takari-plugin-integration-testing.version>2.9.1</takari-plugin-integration-testing.version>
