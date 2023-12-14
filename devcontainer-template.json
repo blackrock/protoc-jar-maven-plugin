@@ -1,0 +1,43 @@
+{
+    "id": "java",
+    "version": "3.0.0",
+    "name": "Java",
+    "description": "Develop Java applications. Includes the JDK and Java extensions.",
+    "documentationURL": "https://github.com/devcontainers/templates/tree/main/src/java",
+    "publisher": "Dev Container Spec Maintainers",
+    "licenseURL": "https://github.com/devcontainers/templates/blob/main/LICENSE",
+    "options": {
+        "imageVariant": {
+            "type": "string",
+            "description": "Java version (use -bookworm, or -bullseye variants on local arm64/Apple Silicon):",
+            "proposals": [
+				"21-bookworm",
+                "17-bookworm",
+                "11-bookworm",
+                "8-bookworm",
+				"21-bullseye",
+                "17-bullseye",
+                "11-bullseye",
+                "8-bullseye",
+				"21-buster",
+                "17-buster",
+                "11-buster",
+                "8-buster"
+            ],
+            "default": "21-bullseye"
+        },
+        "installMaven": {
+            "type": "boolean",
+            "description": "Install Maven, a management tool for Java",
+            "default": "false"
+        },
+        "installGradle": {
+            "type": "boolean",
+            "description": "Install Gradle, a build automation tool for multi-language software development",
+            "default": "false"
+        }
+    },
+    "platforms": [
+        "Java"
+    ]
+}
