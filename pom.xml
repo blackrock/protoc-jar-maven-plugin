@@ -30,6 +30,10 @@
         </developer>
         <developer>
             <id>blackrock</id>
+            <name>Spenson Shih</name>
+        </developer>
+        <developer>
+            <id>blackrock</id>
             <name>Taylor Dieffenbach</name>
         </developer>
     </developers>
