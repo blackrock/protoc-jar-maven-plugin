@@ -1,7 +1,2 @@
 # Support
-
-## Documentation
-
-## Slack Channel
-
-## Forum
+GitHub Issues: https://github.com/blackrock/protoc-jar-maven-plugin/issues

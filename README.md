@@ -19,6 +19,7 @@ Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, 3.25.1, and any b
 
 ### [Contributing](./CONTRIBUTING.md)
 ### [Code of conduct](./CODE_OF_CONDUCT.md)
+### [Service Level Agreement](./SLA.md)
 
 ## License
                                  Apache License
@@ -38,4 +39,4 @@ Forked from
 
 ## Contact
 
-Contact information for questions or feedback.
+GitHub Issues: https://github.com/blackrock/protoc-jar-maven-plugin/issues
