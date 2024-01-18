@@ -1,16 +1,8 @@
 protoc-jar-maven-plugin
 =======================
-
-Protocol Buffers protobuf maven plugin - performs protobuf code generation using [protoc-jar](https://github.com/blackrock/protoc-jar) multi-platform executable protoc JAR.
-Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/blackrock/protoc-jar-maven-plugin/3.11.4/
-
-[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.blackrock|protoc-jar-maven-plugin|3.11.4|)
-
----
-
-Simple maven plugin to compile .proto files using [protoc-jar](https://github.com/blackrock/protoc-jar) embedded protoc compiler, providing some portability across the major platforms (Linux, Mac/OSX, and Windows). At build time the plugin detects the platform and executes the corresponding protoc binary.
-
-Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, and any binaries (protoc and protoc plugins) available for download from maven central. Also supports pre-installed protoc binary
+Simple maven plugin using [protoc-jar](https://github.com/blackrock/protoc-jar-maven-plugin/tree/main/protoc-jar) embedded protoc compile.
+Provides some portability across the major platforms (Linux, Mac/OSX, and Windows). 
+At build time, the plugin detects the platform and executes the corresponding protoc binary.
 
 * Support for FreeBSD on x86 platform (freebsd-x86_64), thanks [kjopek](https://github.com/kjopek)
 * Support for Solaris on x86 platform (sunos-x86_64), thanks [siepkes](https://github.com/siepkes)
@@ -19,24 +11,10 @@ Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, and any binaries 
 * Support for Linux on ARM platform (linux-aarch_64), now from Google
   * Older versions (2.4.1, 2.6.1, 3.4.0), thanks [garciagorka](https://github.com/garciagorka)
 
-See also
-* https://github.com/blackrock/protoc-jar
-* https://github.com/blackrock/protobuf-java-shaded-241
-* https://github.com/blackrock/protobuf-java-shaded-250
-* https://github.com/blackrock/protobuf-java-shaded-261
-* https://github.com/blackrock/protobuf-java-shaded-351
-* https://github.com/blackrock/protobuf-java-shaded-360
-* https://github.com/blackrock/protobuf-java-shaded-3-11-1
-* https://github.com/google/protobuf
-
 Binaries
 * https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/
-* https://repo.maven.apache.org/maven2/com/github/blackrock/protoc/
-* https://oss.sonatype.org/content/repositories/snapshots/com/github/blackrock/protoc/
 
 #### Usage
-
-Documentation: see http://blackrock.github.io/protoc-jar-maven-plugin/, in particular [run-mojo](http://blackrock.github.io/protoc-jar-maven-plugin/run-mojo.html)
 
 Sample usage - compile in main cycle into `target/generated-sources`, add generated sources to project, use default `protoc` version and default `src/main/protobuf` source folder:
 ```xml
@@ -211,3 +189,6 @@ Sample usage - generate java shaded for use with `protobuf-java-shaded-241`, don
 
 Originally based on
 * https://github.com/igor-petruk/protobuf-maven-plugin
+
+Forked from
+* https://github.com/os72/protoc-jar-maven-plugin

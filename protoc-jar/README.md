@@ -2,14 +2,12 @@ protoc-jar
 ==========
 
 Protocol Buffers protobuf compiler - multi-platform executable protoc JAR and API.
-Available on Maven Central: https://repo.maven.apache.org/maven2/com/github/blackrock/protoc-jar/3.11.4/
-
-[![Maven Central](https://img.shields.io/badge/maven%20central-3.11.4-brightgreen.svg)](http://search.maven.org/#artifactdetails|com.github.blackrock|protoc-jar|3.11.4|)
 
 ---
 
-Simple convenience JAR that embeds protoc compiler binaries for Linux, Mac/OSX, and Windows, providing some portability across the major platforms. At runtime the library detects the platform and executes the corresponding protoc binary.
-Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, and any protoc version available for download from maven central
+Simple convenience JAR that embeds protoc compiler binaries for Linux, Mac/OSX, and Windows, providing some portability across the major platforms. 
+At runtime the library detects the platform and executes the corresponding protoc binary.
+Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, 3.25.1, and any protoc version available for download from maven central
 
 * Support for FreeBSD on x86 platform (freebsd-x86_64), thanks [kjopek](https://github.com/kjopek)
 * Support for Solaris on x86 platform (sunos-x86_64), thanks [siepkes](https://github.com/siepkes)
@@ -18,26 +16,16 @@ Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, and any protoc ve
 * Support for Linux on ARM platform (linux-aarch_64), now from Google
   * Older versions (2.4.1, 2.6.1, 3.4.0), thanks [garciagorka](https://github.com/garciagorka)
 
-See also
-* https://github.com/blackrock/protoc-jar-maven-plugin
-* https://github.com/blackrock/protobuf-java-shaded-241
-* https://github.com/blackrock/protobuf-java-shaded-250
-* https://github.com/blackrock/protobuf-java-shaded-261
-* https://github.com/blackrock/protobuf-java-shaded-351
-* https://github.com/blackrock/protobuf-java-shaded-360
-* https://github.com/blackrock/protobuf-java-shaded-3-11-1
-* https://github.com/google/protobuf
 
 Binaries
 * https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/
-* https://repo.maven.apache.org/maven2/com/github/blackrock/protoc/
-* https://oss.sonatype.org/content/repositories/snapshots/com/github/blackrock/protoc/
 
 Version support
 * protobuf 2.4.1: `-v2.4.1`
 * protobuf 2.5.0: `-v2.5.0`
 * protobuf 2.6.1: `-v2.6.1`
 * protobuf 3.11.4: `-v3.11.4`
+* protobuf 3.25.1: `-v3.25.1`
 * Other versions: will attempt download from maven central
 * Download by maven artifact id: `-v:<group>:<artifact>:<version>` (eg, `-v:com.google.protobuf:protoc:3.0.0`)
 
@@ -127,6 +115,12 @@ Detected platform: windows-x86_64 (windows 8.1/amd64)
 <dependency>
   <groupId>com.github.blackrock</groupId>
   <artifactId>protoc-jar</artifactId>
-  <version>3.11.4</version>
+  <version>3.25.1</version>
 </dependency>
 ```
+
+
+#### Credits
+
+Forked from
+* https://github.com/os72/protoc-jar
