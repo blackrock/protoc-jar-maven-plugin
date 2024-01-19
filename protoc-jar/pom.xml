@@ -11,6 +11,7 @@
 	<description>Protocol Buffers compiler - executable JAR and API</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
 		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
 		<maven-javadoc-plugin.version>3.6.2</maven-javadoc-plugin.version>
@@ -109,7 +110,7 @@
 					<execution>
 						<id>attach-sources</id>
 						<goals>
-							<goal>jar</goal>
+							<goal>jar-no-fork</goal>
 						</goals>
 					</execution>
 				</executions>

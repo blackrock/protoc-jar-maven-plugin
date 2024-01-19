@@ -12,6 +12,7 @@
 	<description>Protocol Buffers codegen plugin - based on protoc-jar executable JAR</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<codehaus.version>3.0</codehaus.version>
 		<grpc.version>1.25.0</grpc.version>
 		<jupiter.version>5.0.0</jupiter.version>
@@ -156,7 +157,7 @@
 					<execution>
 					<id>attach-sources</id>
 					<goals>
-						<goal>jar</goal>
+						<goal>jar-no-fork</goal>
 					</goals>
 					</execution>
 				</executions>
