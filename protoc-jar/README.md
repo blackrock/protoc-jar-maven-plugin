@@ -113,7 +113,7 @@ Detected platform: windows-x86_64 (windows 8.1/amd64)
 
 ```xml
 <dependency>
-  <groupId>com.github.blackrock</groupId>
+  <groupId>io.github.blackrock</groupId>
   <artifactId>protoc-jar</artifactId>
   <version>3.25.1</version>
 </dependency>

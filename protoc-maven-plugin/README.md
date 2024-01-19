@@ -19,9 +19,9 @@ Binaries
 Sample usage - compile in main cycle into `target/generated-sources`, add generated sources to project, use default `protoc` version and default `src/main/protobuf` source folder:
 ```xml
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -36,9 +36,9 @@ Sample usage - compile in main cycle into `target/generated-sources`, add genera
 Sample usage - compile in main cycle into `target/generated-sources`, add generated sources to project, add all .proto sources to generated jar, include .proto files from direct maven dependencies, include additional imports:
 ```xml
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -63,9 +63,9 @@ Sample usage - compile in main cycle into `target/generated-sources`, add genera
 Sample usage - download protoc and plugin binaries from maven repo, multiple output targets (example: gRPC):
 ```xml
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -95,9 +95,9 @@ Sample usage - download protoc and plugin binaries from maven repo, multiple out
 Sample usage - javalite, multiple output targets:
 ```xml
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -127,9 +127,9 @@ Sample usage - javalite, multiple output targets:
 Sample usage - compile in test cycle, multiple output targets, don't alter project (`<addSources>: none`):
 ```xml
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-test-sources</phase>
@@ -162,9 +162,9 @@ Sample usage - compile in test cycle, multiple output targets, don't alter proje
 Sample usage - generate java shaded for use with `protobuf-java-shaded-241`, don't alter project:
 ```xml
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>

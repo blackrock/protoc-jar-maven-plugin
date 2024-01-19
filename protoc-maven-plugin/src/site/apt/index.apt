@@ -26,9 +26,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -45,9 +45,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -74,9 +74,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -108,9 +108,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -142,9 +142,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -169,9 +169,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-test-sources</phase>
@@ -196,9 +196,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -224,9 +224,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-test-sources</phase>
@@ -261,9 +261,9 @@ protoc-jar-maven-plugin
 
 +---+
 <plugin>
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar-maven-plugin</artifactId>
-	<version>3.11.4</version>
+	<version>1.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
