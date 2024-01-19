@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.github.blackrock</groupId>
+	<groupId>io.github.blackrock</groupId>
 	<artifactId>grpc-test</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
@@ -51,7 +51,7 @@
 		<plugins>
 
 			<plugin>
-				<groupId>com.github.blackrock</groupId>
+				<groupId>io.github.blackrock</groupId>
 				<artifactId>protoc-maven-plugin</artifactId>
 				<version>${it-plugin.version}</version>
 				<executions>

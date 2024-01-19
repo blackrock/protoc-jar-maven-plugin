@@ -1,4 +1,4 @@
-option java_package = "com.github.blackrock.test";
+option java_package = "io.github.blackrock.test";
 option java_outer_classname = "PersonSchema";
 
 message Person {
