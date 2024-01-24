@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>io.github.blackrock</groupId>
 		<artifactId>protoc-jar-maven-plugin</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>maven-plugin</name>
 	<url>https://github.com/blackrock/protoc-jar-maven-plugin</url>
 	<description>Protocol Buffers codegen plugin - based on protoc-jar executable JAR</description>
