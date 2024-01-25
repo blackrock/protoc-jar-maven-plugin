@@ -10,7 +10,6 @@
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-jar</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
 	<name>protoc-jar</name>
 	<url>https://github.com/blackrock/protoc-jar-maven-plugin/protoc-jar</url>
 	<description>Protocol Buffers compiler - executable JAR and API</description>
