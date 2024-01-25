@@ -11,7 +11,6 @@
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>1.0-SNAPSHOT</version>
 	<name>maven-plugin</name>
 	<url>https://github.com/blackrock/protoc-jar-maven-plugin</url>
 	<description>Protocol Buffers codegen plugin - based on protoc-jar executable JAR</description>
@@ -36,7 +35,6 @@
 		<maven-plugin-api.version>2.0.9</maven-plugin-api.version>
 		<maven-project.version>2.0.9</maven-project.version>
 		<maven-source-plugin.version>3.3.0</maven-source-plugin.version>
-		<protoc-jar.version>1.0-SNAPSHOT</protoc-jar.version>
 		<sonatype.version>0.0.7</sonatype.version>
 		<takari-plugin-integration-testing.version>2.9.1</takari-plugin-integration-testing.version>
 	</properties>
@@ -46,7 +44,8 @@
 		<dependency>
 			<groupId>io.github.blackrock</groupId>
 			<artifactId>protoc-jar</artifactId>
-			<version>${protoc-jar.version}</version>
+			<version>${project.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
