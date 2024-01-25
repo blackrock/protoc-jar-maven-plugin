@@ -13,7 +13,7 @@
       <useProjectArtifact>true</useProjectArtifact>
 	  <useTransitiveDependencies>false</useTransitiveDependencies>
       <unpack>true</unpack>
-      <scope>runtime</scope>
+      <scope>provided</scope>
       <includes>
         <include>io.github.blackrock:protoc-jar</include>
         <include>io.github.blackrock:protoc-maven-plugin</include>
