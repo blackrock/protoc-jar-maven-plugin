@@ -22,22 +22,14 @@ Supports embedded protoc versions 2.4.1, 2.5.0, 2.6.1, 3.11.4, 3.25.1, and any b
 ### [Support](./SUPPORT.md)
 ### [Service Level Agreement](./SUPPORT.md)
 
-## License
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
-
-### [License](./LICENSE)
-
-## Credits
-
-Originally based on
-* https://github.com/igor-petruk/protobuf-maven-plugin
-
-Forked from
-* https://github.com/os72/protoc-jar-maven-plugin
-* https://github.com/os72/protoc-jar
-
 ## Contact
 
 GitHub Issues: https://github.com/blackrock/protoc-jar-maven-plugin/issues
+
+### 
+
+Copyright © 2017-2024 os72, licensed under [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+Copyright © 2024 BlackRock, Inc. Distributed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+Forked from https://github.com/os72/protoc-jar-maven-plugin and https://github.com/os72/protoc-jar
