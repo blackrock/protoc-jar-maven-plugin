@@ -49,81 +49,71 @@ import org.apache.maven.artifact.resolver.ArtifactResolver;
 import org.apache.maven.artifact.versioning.VersionRange;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.*;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.project.MavenProjectHelper;
 import org.sonatype.plexus.build.incremental.BuildContext;
 
 /**
  * Compiles .proto files using protoc-jar embedded protoc compiler. Also supports pre-installed protoc binary, and downloading binaries (protoc and protoc plugins) from maven repo
- * 
- * @goal run
- * @phase generate-sources
- * @requiresDependencyResolution
  */
+@Mojo(name = "run", defaultPhase = LifecyclePhase.GENERATE_SOURCES, requiresDependencyResolution = ResolutionScope.COMPILE_PLUS_RUNTIME)
 public class ProtocJarMojo extends AbstractMojo
 {
 	private static final String DEFAULT_INPUT_DIR = "/src/main/protobuf/".replace('/', File.separatorChar);
 
 	/**
 	 * Specifies the protoc version (default: latest version).
-	 * 
-	 * @parameter property="protocVersion"
 	 */
+	@Parameter(name="protocVersion")
 	private String protocVersion;
 
 	/**
 	 * If "true", skip code generation when .proto input files appear unchanged since last compilation.
-	 * 
-	 * @parameter property="optimizeCodegen" default-value="true"
 	 */
+	@Parameter(name="optimizeCodegen", defaultValue = "true")
 	private boolean optimizeCodegen;
 
 	/**
 	 * Input directories that have *.proto files (or the configured extension).
 	 * If none specified then <b>src/main/protobuf</b> is used.
-	 * 
-	 * @parameter property="inputDirectories"
 	 */
+	@Parameter(name="inputDirectories")
 	private File[] inputDirectories;
 
 	/**
 	 * This parameter lets you specify additional include paths to protoc.
-	 * 
-	 * @parameter property="includeDirectories"
 	 */
+	@Parameter(name="includeDirectories")
 	private File[] includeDirectories;
 
 	/**
 	 * If "true", extract the included google.protobuf standard types and add them to protoc import path.
-	 * 
-	 * @parameter property="includeStdTypes" default-value="false"
 	 */
+	@Parameter(name="includeStdTypes", defaultValue = "false")
 	private boolean includeStdTypes;
 
 	/**
 	 * Specifies whether to extract .proto files from Maven dependencies and add them to the protoc import path.
 	 * Options: "none" (do not extract any proto files), "direct" (extract only from direct dependencies),
 	 * "transitive" (extract from direct and transitive dependencies)
-	 *
-	 * @parameter property="includeMavenTypes" default-value="none"
 	 */
+	@Parameter(name="includeMavenTypes", defaultValue = "none")
 	private String includeMavenTypes;
 
 	/**
 	 * Specifies whether to compile .proto files from Maven dependencies.
 	 * Options: "none" (do not extract any proto files), "direct" (compile only direct dependencies),
 	 * "transitive" (compile direct and transitive dependencies).
-	 *
-	 * @parameter property="compileMavenTypes" default-value="none"
 	 */
+	@Parameter(name="compileMavenTypes", defaultValue = "none")
 	private String compileMavenTypes;
 
 	/**
 	 * Specifies whether to add the source .proto files found in inputDirectories/includeDirectories to the generated jar file.
 	 * Options: "all" (add all), "inputs" (add only from inputDirectories), "none" (default: "none")
-	 * 
-	 * @parameter property="addProtoSources" default-value="none"
 	 */
+	@Parameter(name="addProtoSources", defaultValue = "none")
 	private String addProtoSources;
 
 	/**
@@ -131,9 +121,8 @@ public class ProtocJarMojo extends AbstractMojo
 	 * Options: "java",  "cpp", "python", "descriptor" (default: "java"); for proto3 also: "javanano", "csharp", "objc", "ruby", "js"
 	 * <p>
 	 * Ignored when {@code <outputTargets>} is given
-	 * 
-	 * @parameter property="type" default-value="java"
 	 */
+	@Parameter(name="type", defaultValue = "java")
 	private String type;
 
 	/**
@@ -141,9 +130,8 @@ public class ProtocJarMojo extends AbstractMojo
 	 * Options: "main", "test", "none" (default: "main")
 	 * <p>
 	 * Ignored when {@code <outputTargets>} is given
-	 * 
-	 * @parameter property="addSources" default-value="main"
 	 */
+	@Parameter(name="addSources", defaultValue = "main")
 	private String addSources;
 
 	/**
@@ -151,9 +139,8 @@ public class ProtocJarMojo extends AbstractMojo
 	 * Options: "true", "false" (default: "true")
 	 * <p>
 	 * Ignored when the {@code type} of {@code <outputTarget>} is not {@code descriptor}
-	 *
-	 * @parameter property="includeImports" default-value="true"
 	 */
+	@Parameter(name="includeImports", defaultValue = "true")
 	private boolean includeImports;
 
 	/**
@@ -164,18 +151,16 @@ public class ProtocJarMojo extends AbstractMojo
 	 * important to preserve output folder contents
 	 * <p>
 	 * Ignored when {@code <outputTargets>} is given
-	 * 
-	 * @parameter property="cleanOutputFolder" default-value="false"
 	 */
+	@Parameter(name="cleanOutputFolder", defaultValue = "false")
 	private boolean cleanOutputFolder;
 
 	/**
 	 * Path to the protoc plugin that generates code for the specified {@link #type}.
 	 * <p>
 	 * Ignored when {@code <outputTargets>} is given
-	 *
-	 * @parameter property="pluginPath"
 	 */
+	@Parameter(name="pluginPath")
 	private String pluginPath;
 
 	/**
@@ -183,9 +168,8 @@ public class ProtocJarMojo extends AbstractMojo
 	 * Format: "groupId:artifactId:version" (eg, "io.grpc:protoc-gen-grpc-java:1.0.1")
 	 * <p>
 	 * Ignored when {@code <outputTargets>} is given
-	 *
-	 * @parameter property="pluginArtifact"
 	 */
+	@Parameter(name="pluginArtifact")
 	private String pluginArtifact;
 
 	/**
@@ -195,9 +179,8 @@ public class ProtocJarMojo extends AbstractMojo
 	 * depending on the addSources parameter
 	 * <p>
 	 * Ignored when {@code <outputTargets>} is given
-	 * 
-	 * @parameter property="outputDirectory"
 	 */
+	@Parameter(name="outputDirectory")
 	private File outputDirectory;
 
 	/**
@@ -207,18 +190,16 @@ public class ProtocJarMojo extends AbstractMojo
 	 * "${project.build.directory}/generated-test-sources/protobuf"
 	 * <p>
 	 * Ignored when {@code <outputTargets>} is given
-	 *
-	 * @parameter property="outputDirectorySuffix"
 	 */
+	@Parameter(name="outputDirectorySuffix")
 	private String outputDirectorySuffix;
 
 	/**
 	 * Output options. Used for example with type "js" to create protoc argument --js_out=[OPTIONS]:output_dir
 	 * <p>
 	 * Ignored when {@code <outputTargets>} is given
-	 *
-	 * @parameter property="outputOptions"
 	 */
+	@Parameter(name="outputOptions")
 	private String outputOptions;
 
 	/**
@@ -254,63 +235,48 @@ public class ProtocJarMojo extends AbstractMojo
 	 * <outputTargets>
 	 * }
 	 * </pre>
-	 * 
-	 * @parameter property="outputTargets"
 	 */
+	@Parameter(name="outputTargets")
 	private OutputTarget[] outputTargets;
 
 	/**
 	 * Default extension for protobuf files
-	 * 
-	 * @parameter property="extension" default-value=".proto"
 	 */
+	@Parameter(name="extension", defaultValue = ".proto")
 	private String extension;
 
 	/**
 	 * This parameter allows to use a protoc binary instead of the protoc-jar bundle
-	 * 
-	 * @parameter property="protocCommand"
 	 */
+	@Parameter(name="protocCommand")
 	private String protocCommand;
 
 	/**
 	 * Maven artifact coordinates of the protoc binary to use
 	 * Format: "groupId:artifactId:version" (eg, "com.google.protobuf:protoc:3.1.0")
-	 *
-	 * @parameter property="protocArtifact"
 	 */
+	@Parameter(name="protocArtifact")
 	private String protocArtifact;
 
 	/**
 	 * The Maven project.
-	 * 
-	 * @parameter property="project"
-	 * @readonly
-	 * @required
 	 */
+	@Parameter(defaultValue = "${project}", required = true, readonly = true)
 	private MavenProject project;
 
-	/** 
-	 * @parameter default-value="${localRepository}" 
-	 * @readonly
-	 * @required
-	 */
+	@Parameter(defaultValue = "${localRepository}", required = true, readonly = true)
 	private ArtifactRepository localRepository;
 
-	/** 
-	 * @parameter default-value="${project.remoteArtifactRepositories}" 
-	 * @readonly
-	 * @required
-	 */
+	@Parameter(defaultValue = "${project.remoteArtifactRepositories}", required = true, readonly = true)
 	private List<ArtifactRepository> remoteRepositories;
 
-	/** @component */
+	@Component
 	private BuildContext buildContext;
-	/** @component */
+	@Component
 	private ArtifactFactory artifactFactory;
-	/** @component */
+	@Component
 	private ArtifactResolver artifactResolver;
-	/** @component */
+	@Component
 	protected MavenProjectHelper projectHelper;
 
 	private File tempRoot = null;
