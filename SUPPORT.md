@@ -7,8 +7,6 @@ blackrock/protoc-jar-maven-plugin - Open Source Software Project - Service Level
 This SLA is subject to change, and the project maintainers reserve the right to update it as needed.
 The project is provided "as is," without warranties or guarantees.
 
-Date of Last Update: December 2024
-
 1. Response Time:
 
 Project maintainers will make efforts to respond to issues and inquiries within 20 business days.
