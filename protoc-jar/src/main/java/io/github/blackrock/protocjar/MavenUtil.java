@@ -80,7 +80,7 @@ public class MavenUtil
 				Element mirror = (Element)mirrorList.item(i);
 				String url = mirror.getElementsByTagName("url").item(0).getTextContent().trim();
 				String mirrorOf = mirror.getElementsByTagName("mirrorOf").item(0).getTextContent().trim();
-				if ("central".equals(mirrorOf) || mirrorOf.contains("*")) settings.mMirrorUrl = url;
+				if (("central").equals(mirrorOf) || mirrorOf.contains("*")) settings.mMirrorUrl = url;
 			}
 			
 			NodeList proxyList = xmlDoc.getDocumentElement().getElementsByTagName("proxy");
