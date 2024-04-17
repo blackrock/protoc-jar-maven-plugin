@@ -37,7 +37,7 @@ public class Protoc
 {
 	public static void main(String[] args) {
 		try {
-			if (args.length > 0 && args[0].equals("-pp")) { // print platform
+			if (args.length > 0 && "-pp".equlas(args[0])) { // print platform
 				PlatformDetector.main(args);
 				System.out.println("Detected platform: " + getPlatformVerbose());
 				return;
@@ -61,7 +61,7 @@ public class Protoc
 		for (String arg : args) {
 			ProtocVersion v = getVersion(arg);
 			if (v != null) protocVersion = v;
-			if (arg.equals("--include_std_types")) includeStdTypes = true;
+			if (("--include_std_types").equals(arg)) includeStdTypes = true;
 		}
 		
 		try {
@@ -98,7 +98,7 @@ public class Protoc
 				javaShadedOutDir = arg.split("--java_shaded_out=")[1];
 				protocCmd.add("--java_out=" + javaShadedOutDir);
 			}
-			else if (arg.equals("--include_std_types")) {
+			else if (("--include_std_types").equals(arg)) {
 				File stdTypeDir = new File(new File(cmd).getParentFile().getParentFile(), "include");
 				protocCmd.add("-I" + stdTypeDir.getAbsolutePath());
 			}

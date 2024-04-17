@@ -80,7 +80,7 @@ public class MavenUtil
 				Element mirror = (Element)mirrorList.item(i);
 				String url = mirror.getElementsByTagName("url").item(0).getTextContent().trim();
 				String mirrorOf = mirror.getElementsByTagName("mirrorOf").item(0).getTextContent().trim();
-				if (mirrorOf.equals("central") || mirrorOf.contains("*")) settings.mMirrorUrl = url;
+				if ("central".equals(mirrorOf) || mirrorOf.contains("*")) settings.mMirrorUrl = url;
 			}
 			
 			NodeList proxyList = xmlDoc.getDocumentElement().getElementsByTagName("proxy");
@@ -90,8 +90,8 @@ public class MavenUtil
 				Node port = null;
 				for (int j = 0; j < proxy.getChildNodes().getLength(); j++) {
 					Node n = proxy.getChildNodes().item(j);
-					if (n.getNodeName().equals("host")) host = n;
-					if (n.getNodeName().equals("port")) port = n;
+					if ("host".equals(n.getNodeName())) host = n;
+					if ("port".equals(n.getNodeName())) port = n;
 				}
 				if (host != null) {
 					settings.mProxyHost = host.getTextContent().trim();
@@ -147,8 +147,8 @@ public class MavenUtil
 				Node val = null;
 				for (int j = 0; j < ver.getChildNodes().getLength(); j++) {
 					Node n = ver.getChildNodes().item(j);
-					if (n.getNodeName().equals("classifier")) cls = n;
-					if (n.getNodeName().equals("value")) val = n;
+					if ("classifier".equals(n.getNodeName())) cls = n;
+					if ("value".equals(n.getNodeName())) val = n;
 				}
 				if (cls != null && val != null && cls.getTextContent().equals(clsStr))	{
 					exeName = "protoc-" + val.getTextContent() + "-" + clsStr + ".exe";
