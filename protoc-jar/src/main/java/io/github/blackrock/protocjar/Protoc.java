@@ -37,7 +37,7 @@ public class Protoc
 {
 	public static void main(String[] args) {
 		try {
-			if (args.length > 0 && "-pp".equlas(args[0])) { // print platform
+			if (args.length > 0 && "-pp".equals(args[0])) { // print platform
 				PlatformDetector.main(args);
 				System.out.println("Detected platform: " + getPlatformVerbose());
 				return;
