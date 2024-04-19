@@ -17,22 +17,15 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<codehaus.version>3.0</codehaus.version>
-		<junit.version>4.13.1</junit.version>
-		<maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
-		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+		<junit.version>4.13.2</junit.version>
 
-		<!-- keep javadoc plugin 2.9.x and plugin-plugin in 3.2 - using latest results in error due to the ProtocJarMojo still using javadoc @goal @parameter
-		     once migrated ProtoJarMojo to use Java annotations using maven-plugin-annotations (https://mvnrepository.com/artifact/org.apache.maven.plugin-tools/maven-plugin-annotations)
-		     then we can upgrade to latest 3.x.x -->
-		<maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+		<maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+		<maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
 		<maven-plugin-plugin.version>3.11.0</maven-plugin-plugin.version>
-
-		<maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
-		<maven-plugin-api.version>2.0.9</maven-plugin-api.version>
-		<maven-project.version>2.0.9</maven-project.version>
-		<maven-source-plugin.version>3.3.0</maven-source-plugin.version>
-		<sonatype.version>0.0.7</sonatype.version>
+		<maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+		<maven-jar-plugin.version>3.4.0</maven-jar-plugin.version>
+		<maven-source-plugin.version>3.3.1</maven-source-plugin.version>
 		<takari-plugin-integration-testing.version>3.0.0</takari-plugin-integration-testing.version>
 	</properties>
 
@@ -62,23 +55,23 @@
 		<dependency>
 			<groupId>org.apache.maven.plugin-tools</groupId>
 			<artifactId>maven-plugin-annotations</artifactId>
-			<version>3.11.0</version>
+			<version>3.12.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.sonatype.plexus</groupId>
+			<groupId>org.codehaus.plexus</groupId>
 			<artifactId>plexus-build-api</artifactId>
-			<version>${sonatype.version}</version>
+			<version>1.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.plexus</groupId>
 			<artifactId>plexus-utils</artifactId>
-			<version>${codehaus.version}</version>
+			<version>3.0.24</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.15.1</version>
+			<version>2.16.1</version>
 		</dependency>
 
 		<!-- test -->
@@ -142,6 +135,11 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven-jar-plugin.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
