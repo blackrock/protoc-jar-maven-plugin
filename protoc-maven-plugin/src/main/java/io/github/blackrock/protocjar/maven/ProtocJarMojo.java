@@ -387,13 +387,15 @@ public class ProtocJarMojo extends AbstractMojo
 			}
 		}
 		
-		getLog().info("Input directories:");
-		for (File input : inputDirectories) {
-			getLog().info("    " + input);
-			if ("all".equalsIgnoreCase(addProtoSources) || "inputs".equalsIgnoreCase(addProtoSources)) {
-				List<String> incs = Arrays.asList("**/*" + extension);
-				List<String> excs = new ArrayList<String>();
-				projectHelper.addResource(project, input.getAbsolutePath(), incs, excs);			
+		if (inputDirectories != null && inputDirectories.length > 0) {
+			getLog().info("Input directories:");
+			for (File input : inputDirectories) {
+				getLog().info("    " + input);
+				if ("all".equalsIgnoreCase(addProtoSources) || "inputs".equalsIgnoreCase(addProtoSources)) {
+					List<String> incs = Arrays.asList("**/*" + extension);
+					List<String> excs = new ArrayList<String>();
+					projectHelper.addResource(project, input.getAbsolutePath(), incs, excs);
+				}
 			}
 		}
 		
@@ -709,10 +711,14 @@ public class ProtocJarMojo extends AbstractMojo
 	}
 
 	private void populateIncludes(Collection<String> args) throws MojoExecutionException {
-		for (File include : includeDirectories) {
-			if (!include.exists()) throw new MojoExecutionException("Include path '" + include.getPath() + "' does not exist");
-			if (!include.isDirectory()) throw new MojoExecutionException("Include path '" + include.getPath() + "' is not a directory");
-			args.add("-I" + include.getPath());
+		if (includeDirectories != null) {
+			for (File include : includeDirectories) {
+				if (!include.exists())
+					throw new MojoExecutionException("Include path '" + include.getPath() + "' does not exist");
+				if (!include.isDirectory())
+					throw new MojoExecutionException("Include path '" + include.getPath() + "' is not a directory");
+				args.add("-I" + include.getPath());
+			}
 		}
 	}
 
@@ -752,7 +758,9 @@ public class ProtocJarMojo extends AbstractMojo
 	}
 	static long maxFileTime(File[] dirs) {
 		long maxTime = Long.MIN_VALUE;
-		for (File dir : dirs) maxTime = Math.max(maxTime, maxFileTime(dir));
+		if (dirs != null) {
+			for (File dir : dirs) maxTime = Math.max(maxTime, maxFileTime(dir));
+		}
 		return maxTime;
 	}
 
