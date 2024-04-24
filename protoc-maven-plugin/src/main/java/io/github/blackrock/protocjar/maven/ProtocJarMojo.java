@@ -605,7 +605,7 @@ public class ProtocJarMojo extends AbstractMojo
 	private void processTarget(OutputTarget target) throws MojoExecutionException {
 		boolean shaded = false;
 		String targetType = target.type;
-		if (targetType.equals("java-shaded") || targetType.equals("java_shaded")) {
+		if ("java-shaded".equals(targetType) || "java_shaded".equals(targetType)) {
 			targetType = "java";
 			shaded = true;
 		}
