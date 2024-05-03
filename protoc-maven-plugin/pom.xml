@@ -34,7 +34,7 @@
 			<groupId>io.github.blackrock</groupId>
 			<artifactId>protoc-jar</artifactId>
 			<version>${project.version}</version>
-			<scope>provided,test</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
