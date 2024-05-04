@@ -39,6 +39,13 @@
 			<groupId>io.github.blackrock</groupId>
 			<artifactId>protoc-maven-plugin</artifactId>
 			<version>${it-plugin.version}</version>
+			<dependencies>
+				<dependency>
+					<groupId>io.github.blackrock</groupId>
+					<artifactId>protoc-jar</artifactId>
+					<version>${it-plugin.version}</version>
+				</dependency>
+			</dependencies>
 			<executions>
 				<execution>
 					<id>1</id>
@@ -71,6 +78,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
