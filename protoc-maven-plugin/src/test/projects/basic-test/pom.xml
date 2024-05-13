@@ -56,6 +56,7 @@
 					<configuration>
 						<protocVersion>${protoc.version}</protocVersion>
 						<addProtoSources>all</addProtoSources>
+ 						<includeStdTypes>true</includeStdTypes>
 						<inputDirectories>
 							<include>testprotos</include>
 						</inputDirectories>
