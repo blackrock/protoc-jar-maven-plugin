@@ -484,5 +484,6 @@ public class Protoc
 	static {
 		sStdTypesMap.put("2", sStdTypesProto2);
 		sStdTypesMap.put("3", sStdTypesProto3);
+		sStdTypesMap.put("4", sStdTypesProto3);
 	}
 }
