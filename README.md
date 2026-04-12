@@ -17,7 +17,7 @@ Sample usage - compile in main cycle into `target/generated-sources`, add genera
 <plugin>
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-maven-plugin</artifactId>
-	<version>2.0.0</version>
+	<version>3.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -34,7 +34,7 @@ Sample usage - compile in main cycle into `target/generated-sources`, add genera
 <plugin>
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-maven-plugin</artifactId>
-	<version>2.0.0</version>
+	<version>3.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -61,7 +61,7 @@ Sample usage - download protoc and plugin binaries from maven repo, multiple out
 <plugin>
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-maven-plugin</artifactId>
-	<version>2.0.0</version>
+	<version>3.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -93,7 +93,7 @@ Sample usage - javalite, multiple output targets:
 <plugin>
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-maven-plugin</artifactId>
-	<version>2.0.0</version>
+	<version>3.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-sources</phase>
@@ -125,7 +125,7 @@ Sample usage - compile in test cycle, multiple output targets, don't alter proje
 <plugin>
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-maven-plugin</artifactId>
-	<version>2.0.0</version>
+	<version>3.0.0</version>
 	<executions>
 		<execution>
 			<phase>generate-test-sources</phase>
