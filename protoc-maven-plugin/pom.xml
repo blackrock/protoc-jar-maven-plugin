@@ -11,13 +11,12 @@
 	<groupId>io.github.blackrock</groupId>
 	<artifactId>protoc-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<name>maven-plugin</name>
+	<name>protoc-maven-plugin</name>
 	<url>https://github.com/blackrock/protoc-jar-maven-plugin</url>
 	<description>Protocol Buffers codegen plugin - based on protoc-jar executable JAR</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<junit.version>4.13.2</junit.version>
 
 		<maven-assembly-plugin.version>3.8.0</maven-assembly-plugin.version>
 		<maven-assembly-plugin.version>3.8.0</maven-assembly-plugin.version>
@@ -81,7 +80,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
+			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
