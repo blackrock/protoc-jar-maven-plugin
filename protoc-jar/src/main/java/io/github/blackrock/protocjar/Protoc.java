@@ -26,6 +26,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.URLConnection;
+import java.nio.file.AtomicMoveNotSupportedException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -321,34 +324,34 @@ public class Protoc
 			return destFile;
 		}
 		
-		File tmpFile = File.createTempFile("protocjar", ".tmp");
-		InputStream is = null;
-		FileOutputStream os = null;
+		File tmpFile = null;
 		try {
+			File parent = destFile.getAbsoluteFile().getParentFile();
+			Files.createDirectories(parent.toPath());
+			tmpFile = File.createTempFile("protocjar", ".tmp", parent);
 			log("downloading: " + srcUrl);
 			URLConnection con = srcUrl.openConnection();
-			con.setRequestProperty("User-Agent", "Mozilla"); // sonatype only returns proper maven-metadata.xml if this is set
-			con.setConnectTimeout(5000); // 5 sec timeout
-			con.setReadTimeout(5000); // 5 sec timeout
-			is = con.getInputStream();
-			os = new FileOutputStream(tmpFile);
-			streamCopy(is, os);
-			is.close();
-			os.close();
-			destFile.getParentFile().mkdirs();
-			destFile.delete();
-			tmpFile.renameTo(destFile);
-			destFile.setLastModified(System.currentTimeMillis());
+			con.setRequestProperty("User-Agent", "Mozilla");
+			con.setConnectTimeout(5000);
+			con.setReadTimeout(5000);
+			try (InputStream is = con.getInputStream(); OutputStream os = new FileOutputStream(tmpFile)) {
+				streamCopy(is, os);
+			}
+			try {
+				Files.move(tmpFile.toPath(), destFile.toPath(), StandardCopyOption.ATOMIC_MOVE,
+						StandardCopyOption.REPLACE_EXISTING);
+			}
+			catch (AtomicMoveNotSupportedException e) {
+				Files.move(tmpFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+			}
 		}
 		catch (IOException e) {
-			tmpFile.delete();
-			if (!destFile.exists()) throw e; // if download failed but had cached version, ignore exception
+			if (!destFile.isFile()) throw e; // retain a cached file if refreshing it failed
 		}
 		finally {
-			if (is != null) is.close();
-			if (os != null) os.close();
+			if (tmpFile != null) Files.deleteIfExists(tmpFile.toPath());
 		}
-		
+
 		log("saved: " + destFile);
 		return destFile;
 	}
