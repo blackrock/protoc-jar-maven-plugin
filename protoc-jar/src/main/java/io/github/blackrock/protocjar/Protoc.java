@@ -48,6 +48,7 @@ public class Protoc
 		catch (Exception e) {
 			log(e);
 			e.printStackTrace();
+			System.exit(1);
 		}
 	}
 
@@ -123,9 +124,13 @@ public class Protoc
 			}
 		}
 		
-		new Thread(new StreamCopier(protoc.getInputStream(), out)).start();
-		new Thread(new StreamCopier(protoc.getErrorStream(), err)).start();
+		Thread stdout = new Thread(new StreamCopier(protoc.getInputStream(), out));
+		Thread stderr = new Thread(new StreamCopier(protoc.getErrorStream(), err));
+		stdout.start();
+		stderr.start();
 		int exitCode = protoc.waitFor();
+		stdout.join();
+		stderr.join();
 		
 		if (javaShadedOutDir != null) {
 			log("shading (version " + protocVersion + "): " + javaShadedOutDir);
