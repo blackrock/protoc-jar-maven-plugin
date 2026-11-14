@@ -80,7 +80,11 @@ public class MavenUtil
 				Element mirror = (Element)mirrorList.item(i);
 				String url = mirror.getElementsByTagName("url").item(0).getTextContent().trim();
 				String mirrorOf = mirror.getElementsByTagName("mirrorOf").item(0).getTextContent().trim();
-				if (("central").equals(mirrorOf) || mirrorOf.contains("*")) settings.mMirrorUrl = url;
+				if ("central".equals(mirrorOf)) {
+					settings.mMirrorUrl = url;
+					break; // exact repository matches take precedence over patterns
+				}
+				if (settings.mMirrorUrl == null && mirrorsCentral(mirrorOf)) settings.mMirrorUrl = url;
 			}
 			
 			NodeList proxyList = xmlDoc.getDocumentElement().getElementsByTagName("proxy");
@@ -88,11 +92,14 @@ public class MavenUtil
 				Node proxy = proxyList.item(i);
 				Node host = null;
 				Node port = null;
+				Node active = null;
 				for (int j = 0; j < proxy.getChildNodes().getLength(); j++) {
 					Node n = proxy.getChildNodes().item(j);
+					if ("active".equals(n.getNodeName())) active = n;
 					if ("host".equals(n.getNodeName())) host = n;
 					if ("port".equals(n.getNodeName())) port = n;
 				}
+				if (active != null && !Boolean.parseBoolean(active.getTextContent().trim())) continue;
 				if (host != null) {
 					settings.mProxyHost = host.getTextContent().trim();
 					if (port != null) settings.mProxyPort = Integer.parseInt(port.getTextContent().trim());
@@ -107,6 +114,19 @@ public class MavenUtil
 			throw new IOException(e);
 		}
 		return settings;
+	}
+
+	// Central is an external HTTPS repository. Explicit inclusions/exclusions
+	// override wildcard patterns, and the first matching mirror is selected.
+	static boolean mirrorsCentral(String mirrorOf) {
+		boolean matches = false;
+		for (String token : mirrorOf.split(",")) {
+			token = token.trim();
+			if ("!central".equals(token)) return false;
+			if ("central".equals(token)) return true;
+			if ("*".equals(token) || "external:*".equals(token)) matches = true;
+		}
+		return matches;
 	}
 
 	// find last build (if any) from maven-metadata.xml
